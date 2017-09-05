@@ -52,6 +52,11 @@ class HashTable<KeyType : Hashable, ValueType> {
     var values : [NodeType]
     var count : Int
     
+    var loadFactor : Float {
+        let filledValuesCount = Float(self.values.filter{!$0.empty}.count)
+        return Float(count) != 0 ? filledValuesCount / Float(count) : 0
+    }
+    
     init (count : Int = 0) {
         self.count = count
         self.values = [NodeType]()

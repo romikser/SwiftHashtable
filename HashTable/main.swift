@@ -39,6 +39,8 @@ while let command = readLine() where !command.hasPrefix("end") {
         } else {
             print("Wrong Key Format")
         }
+    case "loadFactor":
+        print(table.loadFactor)
     case "end": break
     default: print("Wrong Command")
     }
